@@ -1,3 +1,5 @@
+import "./tracer";
+
 import { serverHttp } from "./app";
 
 const port = process.env.PORT || 3000;

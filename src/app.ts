@@ -18,7 +18,7 @@ app.post("/users", (request, response) => {
   }
 
   if (!name || !instagram) {
-    return response.status(500).end({ error: "Invalid parameters" });
+    return response.status(500).json({ error: "Invalid parameters" });
   }
 
   const user = {
