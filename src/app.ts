@@ -2,6 +2,8 @@ import express from "express";
 import http from "http";
 import crypto from "crypto";
 
+import { logger } from "./logger";
+
 const app = express();
 
 const serverHttp = http.createServer(app);
@@ -9,6 +11,8 @@ const serverHttp = http.createServer(app);
 app.use(express.json());
 
 app.post("/users", (request, response) => {
+  logger.info("Recebendo requisição de cadastro de usuário");
+
   const { token } = request.headers;
 
   const { name, instagram } = request.body;
