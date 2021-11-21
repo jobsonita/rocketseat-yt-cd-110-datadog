@@ -22,6 +22,7 @@ app.post("/users", (request, response) => {
   }
 
   if (!name || !instagram) {
+    logger.error("invalid-parameters", request.body);
     return response.status(500).json({ error: "Invalid parameters" });
   }
 
